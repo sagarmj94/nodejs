@@ -19,6 +19,10 @@ const filePath = `${dirPath}/apple.txt`;
 
 // how to rename file name dynamically
 
-fs.rename(filePath, `${dirPath}/fruit.txt`, (err) => {
-  if (err) console.log("file name is updated");
-});
+// fs.rename(filePath, `${dirPath}/fruit.txt`, (err) => {
+//   if (err) console.log("file name is updated");
+// });
+
+// how to delete file
+
+fs.unlinkSync(`${dirPath}/fruit.txt`);
