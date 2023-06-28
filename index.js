@@ -1,9 +1,11 @@
-console.log("starting up");
-setTimeout(() => {
-  console.log("2sec log");
-}, 2000);
-console.log("finishing up");
-setTimeout(() => {
-  console.log("0sec log");
-}, 0);
-console.log("finishing up");
+const express = require("express");
+const app = express();
+
+app.get("", (req, res) => {
+  res.send("Hello this is home page");
+});
+app.get("/about", (req, res) => {
+  res.send("Hello this is About page");
+});
+
+app.listen(5000);
