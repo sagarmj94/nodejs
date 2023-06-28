@@ -1,14 +1,7 @@
 const fs = require("fs");
-const color = require("colors");
-const input = process.argv;
-if (input[2] == "add") {
-  fs.writeFileSync(input[3], input[4]);
-} else if (input[2] == "remove") {
-  fs.unlinkSync(input[3]);
-} else {
-  console.log("invalid o/p".red);
+const path = require("path");
+const dirPath = path.join(__dirname, "files");
+console.log(dirPath);
+for (i = 0; i < 5; i++) {
+  fs.writeFileSync(`${dirPath}/hello${i}.txt`, "a simple text file");
 }
-
-// cmd_add_file:_node index.js add orange.txt "this is a color"
-// cmd_add_file:node index.js remove apple.txt
-//cmd_remove_file: node index.js remove orange.txt
