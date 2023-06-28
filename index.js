@@ -1,7 +1,16 @@
 let a = 10;
 let b = 0;
-setTimeout(() => {
-  b = 20;
-  console.log("logic", a + b);
-}, 1000);
-console.log("complete exe...", a + b);
+
+let waitingData = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(30);
+  }, 2000);
+});
+
+waitingData
+  .then((data) => {
+    console.log(a + data);
+  })
+  .catch((err) => {
+    console.log("err", err);
+  });
